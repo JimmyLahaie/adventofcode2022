@@ -16,9 +16,9 @@ public static class Utils
 		return ReadText(day, filename).Split("\r\n");
 	}
 
-	public static void ShowResult<T>(this ITestOutputHelper output, string day, Func<string ,T> solve, T expectedResult)
+	public static void ShowResult<T>(this ITestOutputHelper output, string day, Func<string ,T> solve, T expectedResult, string testInput = "TestInput")
 	{
-			var testResult = solve("TestInput");
+			var testResult = solve(testInput);
 			output.WriteLine("Test result : ");
 			output.WriteLine(testResult.ToString());
 			
